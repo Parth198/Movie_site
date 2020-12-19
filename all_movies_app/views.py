@@ -9,8 +9,6 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @csrf_exempt
 def home(request):
-    if request.method == 'GET':
-        return render(request, 'all_movies_app/home.html')
     # Data fetch from API and stored in Database
     # response = requests.get(
     #     'https://api.themoviedb.org/3/movie/top_rated?api_key=4d8f107a19366ff018ab05901d44eb84&language=en-US&page=1')
@@ -34,25 +32,13 @@ def home(request):
     #         print("Data Exists...")
 
 
-    #Fetch data from database file
+
     #Fetch data from database
     movie_data=Movie_Data.objects.all()
-    movie_info={}
-    
-    for i in movie_data:
-        # print(i.movie_id)
-        movie_info[i.movie_id]={
-            "poster_path":[i.poster_path],
-            "title":[i.title],
-            "overview":[i.overview],
-            "popularity":[i.popularity]
-        }
-    context=json.dumps(movie_info,indent=2)
-
-    # print(context)
-    return HttpResponse(context, content_type="application/json")
-
-    # return render(request, 'all_movies_app/home.html')
+    context = {
+        'movie_data':movie_data,
+    }
+    return render(request, 'all_movies_app/home.html',context)
 
 def searchbar(request):
     if request.method == 'GET':

@@ -1,8 +1,51 @@
 {% extends "base.html" %}
 {% load static %}
 {% block home %}
-hello
+<link rel="stylesheet" type="text/css" href="{% static './css/home.css' %}">
 
-<div id="input"></div>
-<script src="{% static 'js/home.js' %}"></script>
+<div class="container-fluid mt-3 mb-3 popular ">
+    <div>
+        <h2 class="mb-3">Popular Movies :</h2>
+    </div>
+    <div class="row">
+        <div class="d-flex flex-nowrap flex-row align-items-start">
+                {% for i in movie_data %}
+                    <div class="card-group mr-2 col-md-1">
+                        <div class="card border-primary mb-2" style="width: 10em;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
+                                <div class="card-body">
+                                    <h5 class="card-title">{{i.title}}</h5>
+                                    <!-- <p class="card-text">{{i.overview}}</p> -->
+                                    <p class="card-text"><small class="text-muted">Popularity : {{i.popularity}}</small></p>
+                                </div>
+                        </div>
+                    </div> 
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-3 popular" >
+    <div>
+        <h2 class="mb-3">Popular Movies :</h2>
+    </div>
+    <div class="row">
+        <div class="d-flex flex-nowrap flex-row align-items-start">
+                {% for i in movie_data %}
+                    <div class="card-group mr-2 col-md-1">
+                        <div class="card border-primary mb-2" style="width: 10em;">
+                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
+                                <div class="card-body">
+                                    <h5 class="card-title">{{i.title}}</h5>
+                                    <!-- <p class="card-text">{{i.overview}}</p> -->
+                                    <p class="card-text"><small class="text-muted">Popularity : {{i.popularity}}</small></p>
+                                </div>
+                        </div>
+                    </div> 
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+
 {% endblock home %}

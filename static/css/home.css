@@ -1,0 +1,6 @@
+
+div.popular {
+background-color: lightblue;
+width: 100%;
+overflow-x: scroll;
+}
