@@ -1,6 +1,18 @@
-
-div.popular {
-background-color: lightblue;
-width: 100%;
-overflow-x: scroll;
-}
+.dot {
+    height: 50px;
+    width: 50px;
+    /* background-color: #bbb; */
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot_overly{
+  position: absolute; 
+  margin-top: 170px;
+  background: black;
+  /* background: rgba(0, 0, 0, 0.5); */
+  color : white; 
+  font-size: 15px;
+  padding-top: 15px;
+  text-align: center;
+  }

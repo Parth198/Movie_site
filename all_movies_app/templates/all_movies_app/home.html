@@ -10,11 +10,12 @@
     <div class="row">
         <div class="d-flex flex-nowrap flex-row align-items-start">
                 {% for i in movie_data %}
-                    <div class="card-group mr-2 col-md-1">
-                        <div class="card border-primary mb-2" style="width: 10em;">
-                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
+                    <div class="card-group col-1 col-sm-1">
+                        <div class="card border-0 mb-2">
+                            <img class="card-img-top rounded" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
+                            <span class="dot dot_overly">{{i.popularity}}</span>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{i.title}}</h5>
+                                    <h5 class="card-title pt-2">{{i.title}}</h5>
                                     <!-- <p class="card-text">{{i.overview}}</p> -->
                                     <p class="card-text"><small class="text-muted">Popularity : {{i.popularity}}</small></p>
                                 </div>
@@ -25,27 +26,6 @@
     </div>
 </div>
 
-<div class="container-fluid pt-3 popular" >
-    <div>
-        <h2 class="mb-3">Popular Movies :</h2>
-    </div>
-    <div class="row">
-        <div class="d-flex flex-nowrap flex-row align-items-start">
-                {% for i in movie_data %}
-                    <div class="card-group mr-2 col-md-1">
-                        <div class="card border-primary mb-2" style="width: 10em;">
-                            <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
-                                <div class="card-body">
-                                    <h5 class="card-title">{{i.title}}</h5>
-                                    <!-- <p class="card-text">{{i.overview}}</p> -->
-                                    <p class="card-text"><small class="text-muted">Popularity : {{i.popularity}}</small></p>
-                                </div>
-                        </div>
-                    </div> 
-                {% endfor %}
-        </div>
-    </div>
-</div>
 
 
 {% endblock home %}
