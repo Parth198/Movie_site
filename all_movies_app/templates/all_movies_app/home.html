@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block home %}
-<link rel="stylesheet" type="text/css" href="{% static './css/home.css' %}">
+<link rel="stylesheet" type="text/css" media="screen" href="{% static './css/home.css' %}">
 
 <div class="container-fluid mt-3 mb-3" id="popular">
     <div>
@@ -13,7 +13,7 @@
                     <div class="card-group col-1 col-sm-1">
                         <div class="card border-0 mb-2">
                             <img class="card-img-top rounded" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
-                            <span class="dot dot_overly">{{i.popularity}}</span>
+                                <span class="dot dot_overly ">{{i.popularity}}</span>
                                 <div class="card-body">
                                     <h5 class="card-title pt-2">{{i.title}}</h5>
                                     <!-- <p class="card-text">{{i.overview}}</p> -->

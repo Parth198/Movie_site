@@ -34,7 +34,8 @@ def home(request):
 
 
     #Fetch data from database
-    movie_data=Movie_Data.objects.all()
+    # movie_data=Movie_Data.objects.all()
+    movie_data=Movie_Data.objects.all().order_by('-popularity')
     context = {
         'movie_data':movie_data,
     }

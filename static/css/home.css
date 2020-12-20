@@ -5,20 +5,22 @@ div#popular,div#latest {
   }
 
 .dot {
-    height: 50px;
-    width: 50px;
-    /* background-color: #bbb; */
+    height: 4em;
+    width: 4em;
     border-radius: 50%;
     display: inline-block;
   }
   
-  .dot_overly{
-  position: absolute; 
-  margin-top: 170px;
-  background: black;
-  /* background: rgba(0, 0, 0, 0.5); */
-  color : white; 
-  font-size: 15px;
-  padding-top: 15px;
-  text-align: center;
-  }
+.dot_overly{
+position: absolute; 
+margin-top: 160px;
+margin-left: 3px;
+background-color: rgba(0, 0, 0, 0.7);
+border: 2px solid #3aee1a;
+box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7);
+color : white; 
+font-size: 15px;
+padding-top: 15px;
+text-align: center;
+}
+
