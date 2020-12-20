@@ -3,12 +3,12 @@
 {% block home %}
 <link rel="stylesheet" type="text/css" href="{% static './css/home.css' %}">
 
-<div class="container-fluid mt-3 mb-3 popular ">
+<div class="container-fluid mt-3 mb-3" id="popular">
     <div>
         <h2 class="mb-3">Popular Movies :</h2>
     </div>
     <div class="row">
-        <div class="d-flex flex-nowrap flex-row align-items-start">
+        <div class="d-flex flex-nowrap flex-row align-items-start" >
                 {% for i in movie_data %}
                     <div class="card-group col-1 col-sm-1">
                         <div class="card border-0 mb-2">

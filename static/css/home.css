@@ -1,3 +1,9 @@
+div#popular,div#latest {
+  /* background-color: lightblue; */
+  width: 100%;
+  overflow-x: scroll;
+  }
+
 .dot {
     height: 50px;
     width: 50px;
