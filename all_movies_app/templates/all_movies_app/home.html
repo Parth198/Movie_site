@@ -3,15 +3,22 @@
 {% block home %}
 <link rel="stylesheet" type="text/css" media="screen" href="{% static './css/home.css' %}">
 
-<div class="container-fluid mt-3 mb-3" id="popular">
+
+<!-- <img src="{% static './images/1.jpg' %}" alt="no" height="400px" width="100%"> -->
+<div id="banner_home">
+    <img src="{% static './images/2.jpg' %}"  alt="no_image..." height="400px" width="100%">
+</div>
+
+<!-- Popular movies card list -->
+<div class="container-fluid mt-3 mb-3">
     <div>
         <h2 class="mb-3">Popular Movies :</h2>
     </div>
-    <div class="row">
+    <div class="row"  id="popular">
         <div class="d-flex flex-nowrap flex-row align-items-start" >
                 {% for i in movie_data %}
                     <div class="card-group col-1 col-sm-1">
-                        <div class="card border-0 mb-2">
+                        <div class="card border-0">
                             <img class="card-img-top rounded" src="https://image.tmdb.org/t/p/w500/{{i.poster_path}}" alt="Card image cap" height="200px" >
                                 <span class="dot dot_overly ">{{i.popularity}}</span>
                                 <div class="card-body">
@@ -25,7 +32,7 @@
         </div>
     </div>
 </div>
-
+<!--end Popular movies card list -->
 
 
 {% endblock home %}
