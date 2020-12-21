@@ -16,6 +16,7 @@
     </div>
     <div class="row"  id="popular">
         <div class="d-flex flex-nowrap flex-row align-items-start" >
+            {% if movie_data %}
                 {% for i in movie_data %}
                     <div class="card-group col-1 col-sm-1">
                         <div class="card border-0">
@@ -29,6 +30,7 @@
                         </div>
                     </div> 
                 {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>

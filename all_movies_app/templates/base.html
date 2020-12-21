@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Fetch API</title>
+    <title>Movie World</title>
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
@@ -22,21 +22,22 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+
+        <div class="   collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ml-3">
             <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#popular">Popular Movies</a>
-                <a class="dropdown-item" href="#latest">Latest Movies</a>
-            </div>
-        </li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort By
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item " href="{% url 'sort_by_name' %}">Name</a>    
+                    <a class="dropdown-item" href="{% url 'sort_by_popularity' %}">Popularity</a>
+                </div>
+            </li>
                     
         </ul>
             <form action="{% url 'searchbar' %}" method="get" class="form-inline my-2 my-lg-0">
@@ -45,6 +46,42 @@
             </form>
 
         </div>
+   
+
+    
+    <!-- temp old -->
+        <!-- <div class="   collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ml-3">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort By
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item " href="{% url 'sort_by_name' %}">Name</a>    
+                    <a class="dropdown-item" href="{% url 'sort_by_popularity' %}">Popularity</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Popular Movies</a>
+                    <a class="dropdown-item" href="#">Latest Movies</a>
+                </div>
+            </li>
+                    
+        </ul>
+            <form action="{% url 'searchbar' %}" method="get" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search..." name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+        </div> -->
+    <!-- end temp old -->
     </nav>
 </div>
 <br>

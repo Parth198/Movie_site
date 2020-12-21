@@ -34,8 +34,8 @@ def home(request):
 
 
     #Fetch data from database
-    # movie_data=Movie_Data.objects.all()
-    movie_data=Movie_Data.objects.all().order_by('-popularity')
+    movie_data=Movie_Data.objects.all()
+    # movie_data=Movie_Data.objects.all().order_by('-popularity')
     context = {
         'movie_data':movie_data,
     }
@@ -48,3 +48,17 @@ def searchbar(request):
         post = Movie_Data.objects.all().filter(title__startswith=search)
         # print(post)
         return render(request,'all_movies_app/index.html',{'post':post})
+
+def sort_by_name(request):
+    movie_data=Movie_Data.objects.all().order_by('title')
+    context = {
+        'movie_data':movie_data,
+    }
+    return render(request, 'all_movies_app/home.html',context)
+
+def sort_by_popularity(request):
+    movie_data=Movie_Data.objects.all().order_by('-popularity')
+    context = {
+        'movie_data':movie_data,
+    }
+    return render(request, 'all_movies_app/home.html',context)
