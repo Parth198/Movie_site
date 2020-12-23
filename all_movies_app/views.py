@@ -49,16 +49,31 @@ def searchbar(request):
         # print(post)
         return render(request,'all_movies_app/index.html',{'post':post})
 
-def sort_by_name(request):
-    movie_data=Movie_Data.objects.all().order_by('title')
-    context = {
-        'movie_data':movie_data,
-    }
+
+def sort_by_name(request,id):
+    # if request.method == "POST":
+    if id == 1:
+        movie_data=Movie_Data.objects.all().order_by('title')
+        context = {
+            'movie_data':movie_data,
+        }
+    elif id == 2:
+        movie_data=Movie_Data.objects.all().order_by('-title')
+        context = {
+            'movie_data':movie_data,
+        }
+    # print(context)
     return render(request, 'all_movies_app/home.html',context)
 
-def sort_by_popularity(request):
-    movie_data=Movie_Data.objects.all().order_by('-popularity')
-    context = {
-        'movie_data':movie_data,
-    }
+def sort_by_popularity(request,id):
+    if id == 1:
+        movie_data=Movie_Data.objects.all().order_by('popularity')
+        context = {
+            'movie_data':movie_data,
+        }
+    if id == 2:
+        movie_data=Movie_Data.objects.all().order_by('-popularity')
+        context = {
+            'movie_data':movie_data,
+        }
     return render(request, 'all_movies_app/home.html',context)
