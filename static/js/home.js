@@ -1,22 +1,22 @@
-$(document).ready(function () {
-    $.post("/", function (response) {
-        console.log(response);
+$(document).ready(function() {
+	// jQuery code
 
-
-        //Appending
-        $.each(response, function (index, value) {
-            console.log(value.title);
-            
-            $("#input").append(`<div class="card card1">
-                <img src='https://image.tmdb.org/t/p/w500/${value.poster_path}' alt="No photo">
-                <div class="descriptions">
-                    <h1>'${value.title}'</h1>
-                    <p>
-                        '${value.overview}'
-                    </p>
-                </div>
-            </div>`)
-        });
+	//////////////////////// Prevent closing from click inside dropdown
+    $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
     });
 
-});
+    // make it as accordion for smaller screens
+    if ($(window).width() < 992) {
+	  	$('.dropdown-menu a').click(function(e){
+	  		e.preventDefault();
+	        if($(this).next('.submenu').length){
+	        	$(this).next('.submenu').toggle();
+	        }
+	        $('.dropdown').on('hide.bs.dropdown', function () {
+			   $(this).find('.submenu').hide();
+			})
+	  	});
+	}
+	
+}); 
